@@ -22,7 +22,9 @@ CHashRoutine::CHashRoutine()
 
 	AddHashRoutine("lm",   HashLM,   8);
 	AddHashRoutine("ntlm", HashNTLM, 16);
+#ifdef HAVE_MD2
 	AddHashRoutine("md2",  HashMD2,  16);
+#endif
 	AddHashRoutine("md4",  HashMD4,  16);
 	AddHashRoutine("md5",  HashMD5,  16);
 	AddHashRoutine("doublemd5",  HashDoubleMD5,  16);

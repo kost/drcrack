@@ -1,5 +1,7 @@
 CC=g++
 XFLAG =-lssl -lcrypto -lpthread -O3
+# in case you need OpenSSL MD2
+# XFLAG =-lssl -lcrypto -lpthread -O3 -DHAVE_MD2
 all: drtgen rtdump rtsort drcrack rcalc_raw dr_rules
 
 drtgen: Public.o ChainWalkContext.o HashAlgorithm.o HashRoutine.o RainbowTableGenerate.o md5.o md4.o 

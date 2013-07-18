@@ -13,7 +13,9 @@
 #include "Public.h"
 
 #include <openssl/des.h>
+#ifdef HAVE_MD2
 #include <openssl/md2.h>
+#endif
 #include <openssl/md4.h>
 #include <openssl/md5.h>
 #include <openssl/sha.h>
@@ -237,6 +239,7 @@ void HashNTLM(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string
         }
 }
 
+#ifdef HAVE_MD2
 void HashMD2(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen)
 {
 	MD2_CTX ctx;
@@ -245,6 +248,7 @@ void HashMD2(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string 
 	MD2_Final(pHash, &ctx);
 
 }
+#endif
 
 void HashMD4(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen)
 {

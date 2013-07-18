@@ -14,7 +14,9 @@ using namespace std;
 
 void HashLM(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen);
 void HashNTLM(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen);
+#ifdef HAVE_MD2
 void HashMD2(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen);
+#endif
 void HashMD4(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen);
 void HashMD5(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen);
 void HashDoubleMD5(unsigned char* pPlain, int nPlainLen, unsigned char* pHash, string input_salt, int input_saltlen);
